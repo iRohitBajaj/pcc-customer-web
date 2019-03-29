@@ -1,7 +1,8 @@
 # Demo app for PCC Session-state Caching
 
 This project is a snapshot that captures the issue associated with
-session-state caching in PCC.
+session-state caching in PCC when domain objects do not implement
+`java.io.Serializable`.
 
 ## Setup
 
@@ -18,17 +19,20 @@ The application can be deployed as-is given the following assumptions.
 
 Once the application has been deployed, you can hit the application
 endpoint to obtain the main page.
-The page has been designed to collect a customer ID from 1001-2000.
-With session management enabled, you can enter the and return to the
-home page and the same customer will be displayed.
+The page has been designed to collect a customer ID from 1001-2000
+and display the associated customer info.
+You can return to the home page and the same customer will be displayed
+because the customer id is stored as a session attribute.
+With session-state caching enabled, this should allow the session
+information to be cached in PCC, surviving application restart.
 
 Restart the app with `cf restart customer-web`.
 You will see that on re-start and refreshing the home page, you will
 be required to re-enter the customer ID.
 This should NOT be the case if session-state caching were actually
 working.
-One looking at the log file (`cf logs customer-web`) while performing
-the above, you will see output similar to the following.
+On watching the log file (`cf logs customer-web`) while performing the
+above, you will see output similar to the following.
 
 ```bash
    2019-03-29T13:12:41.34-0600 [RTR/1] OUT
