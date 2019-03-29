@@ -1,0 +1,6 @@
+---
+applications:
+- name: customer-web
+  path: target/customer-web-0.0.1-SNAPSHOT.war
+  services:
+    - bookshop-db
