@@ -40,7 +40,7 @@ public class CustomerController {
     }
 
     @PostMapping("/changeCustomer")
-    public String changeCustomer(@RequestParam String customerNumber, @CookieValue (name="JSESSIONID") String sessionId, Model model) {
+    public String changeCustomer(@RequestParam String customerNumber, @CookieValue (name="JSESSIONID", required = false) String sessionId, Model model) {
         logger.info("In changeCustomer() processing customer number: " + customerNumber);
         logger.info("JSESSIONID = " + sessionId);
 
