@@ -11,7 +11,8 @@ The application can be deployed as-is given the following assumptions.
     in the `manifest.yml` file.
 
 -   A PCC service has been created and configured for session-state
-    caching and bound to the deployed application after creation.
+    caching and bound to the deployed application after deploying.
+    Later, you can add the service binding to the manifest.
 
 ## Duplicating the issue
 
