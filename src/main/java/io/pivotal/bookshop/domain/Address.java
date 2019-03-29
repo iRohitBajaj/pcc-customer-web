@@ -1,8 +1,6 @@
 package io.pivotal.bookshop.domain;
 
-import java.io.Serializable;
-
-public class Address implements Serializable
+public class Address
 {
 
     private String addressLine1;

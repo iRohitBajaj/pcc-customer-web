@@ -1,9 +1,9 @@
 package io.pivotal.bookshop.domain;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Customer implements Serializable {
+public class Customer
+{
 
     private Integer customerNumber;
 

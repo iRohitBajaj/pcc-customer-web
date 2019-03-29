@@ -1,9 +1,6 @@
 package io.pivotal.bookshop.domain;
 
-import java.io.Serializable;
-
-public class BookMaster  implements Serializable
-{
+public class BookMaster  {
 
     private int itemNumber;
     private String description;
