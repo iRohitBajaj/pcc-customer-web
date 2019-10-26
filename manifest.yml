@@ -1,6 +1,11 @@
 ---
 applications:
-- name: customer-web
-  path: target/customer-web-0.0.1-SNAPSHOT.war
+- name: customer-web-pcc
+  path: target/customer-web-pcc-0.0.1-SNAPSHOT.war
+  timeout: 600
+  instances: 2
   services:
-    - bookshop-db
+    - pdftest
+    - pcc-tls-session
+  env:
+    JAVA_OPTS: '-Dgemfire.ssl-enabled-components=all -Dgemfire.ssl-keystore=/home/vcap/app/META-INF/keystore.jks -Dgemfire.ssl-keystore-password=changeit -Dgemfire.ssl-truststore=$HOME/WEB-INF/classes/truststore.jks -Dgemfire.ssl-truststore-password=changeit'
